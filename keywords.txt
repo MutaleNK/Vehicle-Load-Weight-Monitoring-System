@@ -1,0 +1,5 @@
+Pir	KEYWORD1
+Step_Sensor	KEYWORD1
+
+get_value	KEYWORD2
+Step_direction	KEYWORD2
