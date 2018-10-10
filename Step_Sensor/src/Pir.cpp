@@ -11,7 +11,7 @@ Pir::Pir(int pin,int value){
     this -> pin = pin;
     this -> value = value;
 }
-Pir::get_value(){
+int Pir::get_value(){
     return this->value;
 }
 
