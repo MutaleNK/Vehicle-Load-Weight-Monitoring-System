@@ -8,6 +8,7 @@ Released into public domain
 */
 #ifndef Step_Sensor_h
 #define Step_Sensor_h
+#include "String.h"
 #include "Arduino.h"
 #include "Pir.h"
 
@@ -16,14 +17,19 @@ class Step_Sensor{
 
     Pir pir_sensors[2];             //Store Pir objects
     int order_Arr[2];               //Used to stored the order in which 
-    int Step_direction(Pir sensor); //the PIR Sensors are triggered
-    int oAIndex;            
+    int oAIndex;
+
+    bool isStep();                  //Return value of step.
+    void setStep(bool);
+    String getDirection();          //Return the last step direction
+    void Step_direction();          //the PIR Sensors are triggered
     Step_Sensor(int,int);
+    void both_triggered(Pir sensor);    
 
     private:
-    void pir_01_is_Triggered_ISR();
-    void pir_02_is_Triggered_ISR();
-    void both_triggered(Pir sensor);
+    bool step = false;              //Has someone stepped across the sensors? 
+    String lastStep;
+
     
 };
 #endif

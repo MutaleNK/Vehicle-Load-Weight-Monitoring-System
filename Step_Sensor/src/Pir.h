@@ -10,9 +10,11 @@ Released into public domain
 class Pir {
 public:
     Pir(int, int);
+    Pir();
     int pin;
     bool status;
     int get_value();
+    void set_value(int);
 
 private:
     int value;

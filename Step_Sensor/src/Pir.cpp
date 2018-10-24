@@ -11,7 +11,14 @@ Pir::Pir(int pin,int value){
     this -> pin = pin;
     this -> value = value;
 }
+Pir::Pir(){
+    this -> pin = 0;
+    this -> value = 0;
+}
 int Pir::get_value(){
     return this->value;
+}
+void Pir::set_value(int val){
+    this->value = val;
 }
 
