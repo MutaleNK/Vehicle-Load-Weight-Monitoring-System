@@ -16,8 +16,8 @@ class Step_Sensor{
     public:
 
     Pir pir_sensors[2];             //Store Pir objects
-    int order_Arr[2];               //Used to stored the order in which 
-    int oAIndex;
+    volatile int order_Arr[2];      //Used to stored the order in which 
+    volatile int oAIndex;
 
     bool isStep();                  //Return value of step.
     void setStep(bool);
