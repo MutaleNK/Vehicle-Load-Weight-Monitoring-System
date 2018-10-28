@@ -63,6 +63,10 @@ void Step_Sensor::both_triggered(Pir sensor){
             break;
     }
 }
+void clear_Arr(){
+    order_Arr[0] = 0;
+    order_Arr[1] = 0;
+}
 bool Step_Sensor::isStep(){
     return step;
 }

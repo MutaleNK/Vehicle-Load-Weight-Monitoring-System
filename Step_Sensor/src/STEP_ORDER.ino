@@ -13,14 +13,14 @@ void setup() {
   Serial.begin(9600);
   attachInterrupt(digitalPinToInterrupt(tracker.pir_sensors[0].pin),pir_01_is_Triggered_ISR,HIGH);
   attachInterrupt(digitalPinToInterrupt(tracker.pir_sensors[1].pin),pir_02_is_Triggered_ISR,HIGH);  
-  Serial.println("hey");
+  Serial.println("Started. . . ");
+  char dir[10];                       //Store the Value of the Step Direction
 }
 
 void loop() {
   
   if(tracker.isStep()){
-    char dir[10];
-    tracker.getDirection().toCharArray(dir,8);
+    tracker.getDirection().toCharArray(dir,10);
     Serial.print("True :: ");
     Serial.print(dir);
     tracker.setStep(false);
